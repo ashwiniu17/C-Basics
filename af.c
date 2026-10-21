@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 void read(int *p, int n)
@@ -7,23 +8,25 @@ void read(int *p, int n)
         scanf("%d", p+i);
 }
 
-void display(int *p, int n)
+void write(int *p, int n)
 {
     int i;
     for(i = 0; i < n; i++)
         printf("%d ", *(p+i));
-    printf("\n");
 }
 
 void reverse(int *p, int n)
 {
-    int i;
-    for(i = n-1; i >= 0; i--)
-        printf("%d ", *(p+i));
-    printf("\n");
+    int i, temp;
+    for(i = 0; i < n/2; i++)
+    {
+        temp = *(p+i);
+        *(p+i) = *(p+n-1-i);
+        *(p+n-1-i) = temp;
+    }
 }
 
-int delete(int *p, int *n, int key)
+int searchDelete(int *p, int *n, int key)
 {
     int i, j;
 
@@ -44,7 +47,7 @@ int delete(int *p, int *n, int key)
 int main()
 {
     int a[100], n, key;
-    int (*fp)(int *, int *, int) = delete;
+    int (*fp)(int *, int *, int) = searchDelete;
 
     printf("Enter number of elements: ");
     scanf("%d", &n);
@@ -53,18 +56,19 @@ int main()
     read(a, n);
 
     printf("Array: ");
-    display(a, n);
+    write(a, n);
 
-    printf("Reverse: ");
     reverse(a, n);
+    printf("\nReversed array: ");
+    write(a, n);
 
-    printf("Enter element to delete: ");
+    printf("\nEnter key to delete: ");
     scanf("%d", &key);
 
     if(fp(a, &n, key))
     {
         printf("After deletion: ");
-        display(a, n);
+        write(a, n);
     }
     else
         printf("Element not found");
