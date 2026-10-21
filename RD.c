@@ -1,6 +1,7 @@
 //Program to read and display array using pointer
-/*
+
 #include <stdio.h>
+/*
 int main()
 {
     int a[100],n , i;
