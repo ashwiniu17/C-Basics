@@ -1,3 +1,6 @@
+/*Program 3. Insert an Element into an Array
+Question: Write a C program to insert an element at a specified position in an array.
+*/
 #include <stdio.h>
 
 int main(void)

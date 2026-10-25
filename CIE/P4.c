@@ -1,3 +1,6 @@
+/*Program 4. Delete an Element from an Array
+Question: Write a C program to delete an element from a specified position in an array.*/
+
 #include <stdio.h>
 
 int main(void)
