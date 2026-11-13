@@ -1,3 +1,17 @@
+/*Develop a menu driven program to implement the following operations on 
+array storage representation with static and dynamic memory allocation. 
+i)Insert by position 
+ii) Delete by position  
+iii)Insert by key  
+iv) Delete by key  
+v) Insert by order  
+vi) Search by key  
+vii) Search by position  
+viii) Reverse the contents.*/
+//Static memory allocation
+
+
+
 #include <stdio.h>
 
 #define MAX 100
